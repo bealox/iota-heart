@@ -1,19 +1,36 @@
 {
   "name": "iota-heart",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "rimraf dist/ && babel ./src --out-dir dist/ --ignore ./node_modules --ignore __tests__ --copy-files",
+    "make": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bealox/iota-heart.git"
   },
-  "author": "",
+  "author": "Andy Hsieh (shoukoo.koike@gmail.com)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bealox/iota-heart/issues"
   },
-  "homepage": "https://github.com/bealox/iota-heart#readme"
+  "homepage": "https://github.com/bealox/iota-heart#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "commander": "^2.13.0",
+    "iota.lib.js": "^0.4.6",
+    "nedb": "^1.8.0",
+    "ws": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "colors": "^1.1.2",
+    "jest": "^22.1.4",
+    "rimraf": "^2.6.2"
+  }
 }
